@@ -1,0 +1,68 @@
+package monitorsystem;
+import java.util.Scanner;
+import java.io.IOException;
+import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author Jeremy Miller
+ */
+public class MonitorSystem {
+    
+    /*
+        Method for finding a problem with animal or habitat and present a message
+        to alert zookeeper of the problem
+    */
+    
+    public static void DetectProblem(String testString) {
+        if (testString.contains("*****")) {
+            testString = testString.replace("*****", "");
+            JOptionPane.showMessageDialog(null, testString, "Alert", 2);
+            return;
+        }
+        else {
+            return;
+        }
+    }
+    
+    /*
+        Start of program to ask whether the user wants to see animals or habitats or exit.
+    */
+
+    public static void main(String[] args) {
+        String category = "none";
+        Scanner scnr = new Scanner(System.in);
+        
+        while (!category.equals("exit")) {
+            System.out.println("Do you want to monitor an Animal, Habitat or Exit?");
+            category = scnr.next();
+            category = category.toLowerCase();
+            if (category.equals("animal")) {
+                try {
+                    ReportingSystem.ReadFile(category);
+                }
+                catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            else if (category.equals("habitat")) {
+                try {
+                    ReportingSystem.ReadFile(category);
+                }
+                catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            else if (category.equals("exit")) {
+                continue;
+            }
+            else {
+                System.out.println("Incorrect Input");
+                continue;
+            }
+        }
+        System.out.println("Closing Program...");
+        System.out.println("Goodbye");
+    }
+    
+}
