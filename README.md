@@ -1,3 +1,6 @@
 # Zookeeper
 
-This is the console version of a zookeeper project I did for my final project in JAVA. I'm currently working on a window version plus adding a sign in process which would display different information based on the user's credentials (e.g. veterinarian, zookeeper). I will update files as I finish them.
+Final project in JAVA that takes input from the user to monitor habitats or animals. Provides data with a pop-up when the habitat or animal has important information such as no feeding schedule or habitat needing cleaned.
+
+WIP:
+  Login/Authorization step at start
